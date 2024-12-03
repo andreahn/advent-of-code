@@ -3,6 +3,7 @@ package helpers
 import (
 	"os"
 	"strconv"
+	"strings"
 )
 
 func ReadInputAsString(inputPath string) string {
@@ -21,4 +22,20 @@ func handleError(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func GetIntegerMatrix(inputPath string) [][]int {
+	rawData := ReadInputAsString(inputPath)
+	data := make([][]int, strings.Count(rawData, "\n")+1)
+
+	splitByLine := strings.Split(rawData, "\n")
+
+	for i, value := range splitByLine {
+
+		for _, v := range strings.Split(value, " ") {
+			data[i] = append(data[i], StringToInt(v))
+		}
+	}
+
+	return data
 }
