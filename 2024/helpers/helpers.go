@@ -39,3 +39,9 @@ func GetIntegerMatrix(inputPath string) [][]int {
 
 	return data
 }
+
+func GetListOfStrings(inputPath string) []string {
+	rawData := ReadInputAsString(inputPath)
+	rawData = strings.TrimRight(rawData, "\n")
+	return strings.Split(rawData, "\n")
+}
