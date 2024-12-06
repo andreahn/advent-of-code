@@ -45,3 +45,4 @@ func GetListOfStrings(inputPath string) []string {
 	rawData = strings.TrimRight(rawData, "\n")
 	return strings.Split(rawData, "\n")
 }
+
