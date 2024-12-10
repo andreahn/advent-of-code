@@ -40,6 +40,22 @@ func GetIntegerMatrix(inputPath string) [][]int {
 	return data
 }
 
+func GetIntegerMatrixNoSpacing(inputPath string) [][]int {
+	rawData := ReadInputAsString(inputPath)
+	data := make([][]int, strings.Count(rawData, "\n"))
+
+	splitByLine := strings.TrimRight(rawData, "\n")
+
+	for i, value := range strings.Split(splitByLine, "\n") {
+
+		for _, v := range strings.Split(value, "") {
+			data[i] = append(data[i], StringToInt(v))
+		}
+	}
+
+	return data
+}
+
 func GetListOfStrings(inputPath string) []string {
 	rawData := ReadInputAsString(inputPath)
 	rawData = strings.TrimRight(rawData, "\n")
