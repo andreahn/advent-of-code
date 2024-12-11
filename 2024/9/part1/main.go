@@ -13,7 +13,7 @@ func main() {
 
 func SolvePuzzle(inputPath string) int {
 
-	data := helpers.GetIntegerArray(inputPath)
+	data := helpers.GetIntegerArray(inputPath, "")
 	checkSum := 0
 	fileQueue := make([]map[string]int, 0)
 	currIndex := 0

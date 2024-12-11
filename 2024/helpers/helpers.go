@@ -62,11 +62,11 @@ func GetListOfStrings(inputPath string) []string {
 	return strings.Split(rawData, "\n")
 }
 
-func GetIntegerArray(inputPath string) []int {
+func GetIntegerArray(inputPath string, splitBy string) []int {
 	rawData := ReadInputAsString(inputPath)
 	rawData = strings.TrimRight(rawData, "\n")
 	res := make([]int, 0)
-	for _, v := range strings.Split(rawData, "") {
+	for _, v := range strings.Split(rawData, splitBy) {
 		res = append(res, StringToInt(v))
 	}
 	return res
